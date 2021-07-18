@@ -5,16 +5,17 @@ import './Navbar.css'
 function NavBar(){
   const [clicked, setClicked] = useState(false)
 
-  const handleClick = () =>{
-
+  const handleClick = (e) =>{
+    e.preventDefault()
+    setClicked(!clicked)
   }
   return(
   <nav className="NavbarItems">
     <h1 className="NavbarLogo">AnimeCity<i class="fab fa-fantasy-flight-games"></i></h1>
       <div className="MenuItmem" onClick={handleClick}>
-        <i className={clicked === true ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
       </div>
-    <ul >
+    <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
     {MenuItems.map((item, index) => {
       return(
         <li key={index}>
