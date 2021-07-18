@@ -2,6 +2,7 @@ import React from 'react'
 import Home from './Components/Home.js'
 import {BrowserRouter as Router} from "react-router-dom";
 import NavBar from './Navbar/Navbar.js'
+import './App.css'
 
 
 
@@ -12,7 +13,7 @@ function App() {
 
     <Router path='/'>
 
-        <Home />
+
     </Router>
     </div>
   );
