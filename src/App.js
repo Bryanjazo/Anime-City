@@ -1,12 +1,12 @@
 import React from 'react'
 import Home from './Components/Home.js'
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
-import ButtonAppBar from './Components/Navbar.js'
+import instance from './Components/Navbar.js'
 
 function App() {
   return (
     <div className="App">
-    <ButtonAppBar />
+    <instance />
     <Router path='/'>
         <Home />
     </Router>

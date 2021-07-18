@@ -1,32 +1,25 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { Navbar, Dropdown, Icon, Nav } from 'rsuite';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   title: {
-//     flexGrow: 1,
-//   },
-// }));
-
-export default function ButtonAppBar() {
-  // const classes = useStyles();
-
-  return (
-    <div className='s'>
-      <AppBar position="static">
-
-      </AppBar>
-    </div>
-  );
-}
+export const instance = (
+  <Navbar>
+    <Navbar.Header>
+      <a href="#" className="navbar-brand logo">RSUITE</a>
+    </Navbar.Header>
+    <Navbar.Body>
+      <Nav>
+        <Nav.Item icon={<Icon icon="home" />} >Home</Nav.Item>
+        <Nav.Item>News</Nav.Item>
+        <Nav.Item>Products</Nav.Item>
+        <Dropdown title="About">
+          <Dropdown.Item>Company</Dropdown.Item>
+          <Dropdown.Item>Team</Dropdown.Item>
+          <Dropdown.Item>Contact</Dropdown.Item>
+        </Dropdown>
+      </Nav>
+      <Nav pullRight>
+        <Nav.Item icon={<Icon icon="cog" />} >Settings</Nav.Item>
+      </Nav>
+    </Navbar.Body>
+  </Navbar>
+);
