@@ -1,16 +1,11 @@
 import React from 'react';
-import { Navbar} from 'rsuite';
-import './Navbar.css'
+
+import {BrowserRouter as Router} from "react-router-dom";
 
 function navBar(){
 
-
   return(
-    <Navbar className="test">
-      <Navbar.Header>
-        <a href="/" className="navbar-brand logo">AnimeCity</a>
-      </Navbar.Header>
-    </Navbar>
+
   )
 }
 
