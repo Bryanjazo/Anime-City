@@ -12,8 +12,7 @@ function App() {
     <NavBar />
 
     <Router path='/'>
-
-
+      <Home />
     </Router>
     </div>
   );
