@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import './Home.css'
-import TransitionsModal from './Modal.js'
+import ModalHome from './Modal.js'
 
 
 
 function Home(){
 
   const [animes, setAnimes] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   useEffect(() =>{
     fetch("http://localhost:3000/animes")
@@ -16,6 +17,7 @@ function Home(){
       console.log(animes)
     })
   },[])
+  console.log(openModal)
 
     return (
       <div className="row">
@@ -23,22 +25,23 @@ function Home(){
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Mystery").map(anime => (
             <>
-              <img className='row_poster' src={anime.image_url} alt={anime.title} />
-              <TransitionsModal
-              className="viewButton"
+              <img onClick={() => {setOpenModal(!openModal)}} className='row_poster' src={anime.image_url} alt={anime.title} />
+              {openModal && <ModalHome
               key={anime.id}
+              openModal={setOpenModal}
+              closeModal={setOpenModal}
               title={anime.title}
               description={anime.description}
               episodes={anime.episodes}
               genre={anime.genre}
               imageUrl={anime.image_url}
               url={anime.url}
-              />
+
+              />}
             </>
            ))}
 
         </div>
-
 
         <h2>Action</h2>
         <div className="row_posters">

@@ -1,95 +1,62 @@
-import React from 'react';
+import React from 'react'
+import './Modal.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-export default function TransitionsModal({title, description, episodes, genre, imageUrl, url}) {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">{title}</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
-        </Fade>
-      </Modal>
-    </div>
-  );
+function rand() {
+    return Math.round(Math.random() * 20) - 10;
 }
 
+function getModalStyle() {
+    const top = 50 + rand();
+    const left = 50 + rand();
+    return {
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`,
+    };
+}
 
-// import React from 'react'
-// import './Modal.css'
-// function Modal({title, description, genre,episodes,image_url,url,closeModal}){
-//
-//
-//
-//     return (
-//       <div className="modalBackground">
-//       <div className="modalContainer">
-//       <div className="fas fa-times topCloseButton" onClick={() => closeModal(!closeModal)}>
-//       </div>
-//         <div className="Title">
-//           <h1>{title}</h1>
-//         </div>
-//         <div className="Image">
-//         <img src={image_url} alt=''/>
-//         </div><br></br>
-//           <div className="Synopsis">
-//           <p>{description}</p>
-//             </div>
-//           <div className="Episodes">
-//           <p>{episodes} episodes</p>
-//             </div>
-//           <div className="ButtonLink">
-//           <button type="submit">Watch</button>
-//           </div>
-//       </div>
-//       </div>
-//
-//     )
-//
-// }
-//
-// export default Modal
+const useStyles = makeStyles(theme => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        position: 'absolute',
+        width: 450,
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+}));
+
+function ModalHome({title, description, genre,episodes,imageUrl,url,closeModal}){
+
+  const classes = useStyles();
+
+    return (
+
+    <div className="modalBackground">
+      <Modal
+               aria-labelledby="simple-modal-title"
+               aria-describedby="simple-modal-description"
+
+               on
+          >
+               <div className={classes.paper}>
+                   <h2>Simple React Modal</h2>
+                   <p>
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan odio enim, non pharetra est ultrices et.
+                   </p>
+               </div>
+           </Modal>
+    </div>
+    )
+
+}
+
+export default Modal

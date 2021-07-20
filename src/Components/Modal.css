@@ -7,7 +7,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.imageTi{
+  align-items: center;
+}
 .modalContainer{
   width: 800px;
   height: 800px;
