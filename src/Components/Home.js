@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Home.css'
+import TransitionsModal from './Modal.js'
 
 
 
@@ -16,14 +17,29 @@ function Home(){
     })
   },[])
 
-
     return (
       <div className="row">
         <h2>Mystery</h2>
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Mystery").map(anime => (
-            <img className='row_poster' key={anime.id} src={anime.image_url} alt={anime.title} /> ))}
+            <>
+              <img className='row_poster' src={anime.image_url} alt={anime.title} />
+              <TransitionsModal
+              className="viewButton"
+              key={anime.id}
+              title={anime.title}
+              description={anime.description}
+              episodes={anime.episodes}
+              genre={anime.genre}
+              imageUrl={anime.image_url}
+              url={anime.url}
+              />
+            </>
+           ))}
+
         </div>
+
+
         <h2>Action</h2>
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Action").map(anime => (
