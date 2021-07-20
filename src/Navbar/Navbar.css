@@ -15,13 +15,16 @@
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
+
 }
 
 .fa-fantasy-flight-games{
   margin-left: 0.5rem;
   font-size: 1.6rem;
 }
-
+.cla{
+   text-decoration: none;
+}
 .nav-menu{
   display: grid;
   grid-template-columns: repeat(5, auto);

@@ -1,4 +1,15 @@
-.modalBackground{
+.modal{
+  position: fixed;
+  left: 35%;
+  top: 25%;
+  right: 35%;
+  bottom: 25%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .modalBackground{
   width: 100vw;
   height: 100vh;
   background-color: rgba(200, 200, 200);
@@ -50,4 +61,8 @@
   font-size: 1.5rem;
   justify-content: flex-end;
   color: #6d76f7;
+} */
+.timesFade{
+  display: flex;
+  justify-content: flex-end;
 }

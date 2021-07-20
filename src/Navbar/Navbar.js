@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {MenuItems} from './MenuItems.js'
+import {Link, useHistory} from 'react-router-dom'
 import {Button} from '../Components/Button.js'
 import './Navbar.css'
 function NavBar(){
@@ -11,7 +12,9 @@ function NavBar(){
   }
   return(
   <nav className="NavbarItems">
-    <h1 className="NavbarLogo">AnimeCity<i class="fab fa-fantasy-flight-games"></i></h1>
+    <Link className="cla" to="/">
+    <h1  className="NavbarLogo changeTitle">AnimeCity<i class="fab fa-fantasy-flight-games"></i></h1>
+    </Link>
       <div className="MenuItmem" onClick={handleClick}>
         <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
       </div>
@@ -26,7 +29,9 @@ function NavBar(){
     )
     })}
     </ul>
-    <Button>Sign Up</Button>
+    <Link to="/Login">
+    <Button>Login</Button>
+    </Link>
   </nav>
   )
 }

@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import './Home.css'
+import {useSelector, useDispatch} from 'react-redux'
 import ModalHome from './Modal.js'
-
+import {setModalStatus} from '../Redux/reducerRedux.js'
 
 
 function Home(){
+  const {modal} = useSelector((state) => state.anime)
 
   const [animes, setAnimes] = useState([])
-  const [openModal, setOpenModal] = useState(false)
-
+  const dispatch = useDispatch()
   useEffect(() =>{
     fetch("http://localhost:3000/animes")
     .then(resp => resp.json())
@@ -17,19 +18,21 @@ function Home(){
       console.log(animes)
     })
   },[])
-  console.log(openModal)
+const setModal = (e) => {
+  e.preventDefault()
+  dispatch(setModalStatus(!modal))
+}
+  console.log(modal, "modal")
 
     return (
       <div className="row">
         <h2>Mystery</h2>
         <div className="row_posters">
-        {animes.filter(animeFilter => animeFilter.genre === "Mystery").map(anime => (
+        {animes.filter(animeFilter => animeFilter.genre === "Mystery").map((anime, key) => (
             <>
-              <img onClick={() => {setOpenModal(!openModal)}} className='row_poster' src={anime.image_url} alt={anime.title} />
-              {openModal && <ModalHome
-              key={anime.id}
-              openModal={setOpenModal}
-              closeModal={setOpenModal}
+              <img onClick onClick={setModal} className='row_poster' src={anime.image_url} alt={anime.title} />
+              {modal && <ModalHome
+              key={key}
               title={anime.title}
               description={anime.description}
               episodes={anime.episodes}
