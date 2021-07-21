@@ -11,15 +11,31 @@ function ModalHome({title, description, genre,episodes,imageUrl,url,closeModal, 
   const dispatch = useDispatch()
     const {modal} = useSelector((state) => state.anime)
 
-    console.log(key)
+    console.log(title)
     return (
-    <div className="modal">
+    <div key={key} className="modal">
       <div className="modal-title">
-        {title}
+          {title}
         </div>
         <div className="modal_image">
-          {imageUrl}
+          <img  src={imageUrl} alt="title"/>
         </div>
+        <div className="description">
+          {description}
+        </div>
+        <div className="genreHome">
+          {genre}
+        </div>
+        <div className="episodes">{episodes}</div>
+
+        <button className="watchBtn">Watch {title}</button>
+        <button className="addToFavs">Add to favorites</button>
+
+
+
+
+
+
 
     </div>
     )
