@@ -1,62 +1,12 @@
-.modal{
-  position: fixed;
-  left: 35%;
-  top: 25%;
-  right: 35%;
-  bottom: 15%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 25px;;
-  border-radius: 40px;
-  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
-}
-.modal .modal-title{
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-}
-.modal .modal_image{
-  display: inline-block;
-  text-align: center;
-}
-.modal .description{
-  display: inline-block;
-  text-align: center;
-}
-.modal .genreHome{
-  display: flex;
-  padding-top: 10px;
-  justify-content: flex-start;
-}
-.modal .episodes{
-  display: flex;
-  justify-content: flex-end;
-}
-.modal .buttonWatch{
-  display: flex;
-  align-items: center;
-}
-.addToFavs{
-  display: flex;
-  margin-left: 75%;
-  justify-content: flex-end;
-}
-.watchBtn{
-    display: flex;
-    margin-right: 75%;
-    justify-content: flex-start;
-
-}
-/* .modalBackground{
+.modalBackground{
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200);
-  position: fixed;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/*
 .imageTi{
   align-items: center;
 }
@@ -101,7 +51,3 @@
   justify-content: flex-end;
   color: #6d76f7;
 } */
-.timesFade{
-  display: flex;
-  justify-content: flex-end;
-}

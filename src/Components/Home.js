@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react'
 import './Home.css'
 import {useSelector, useDispatch} from 'react-redux'
 import ModalHome from './Modal.js'
+import {Link, useHistory} from 'react-router-dom'
 import {setModalStatus} from '../Redux/reducerRedux.js'
 
 
 function Home(){
   const {modal} = useSelector((state) => state.anime)
-
+  const history = useHistory()
   const [animes, setAnimes] = useState([])
   const dispatch = useDispatch()
   useEffect(() =>{
@@ -18,9 +19,9 @@ function Home(){
       console.log(animes)
     })
   },[])
-const setModal = (e) => {
+const animePush = (e) => {
   e.preventDefault()
-  dispatch(setModalStatus(!modal))
+  console.log(e.target.key)
 }
   console.log(modal, "modal")
 
@@ -28,20 +29,12 @@ const setModal = (e) => {
       <div className="row">
         <h2>Mystery</h2>
         <div className="row_posters">
-        {animes.filter(animeFilter => animeFilter.genre === "Mystery").map((anime, key) => (
+        {animes.filter(animeFilter => animeFilter.genre === "Mystery").map(anime => (
             <>
-              <img onClick onClick={setModal} className='row_poster' src={anime.image_url} alt={anime.title} />
-              {modal && <ModalHome
-              key={key}
-              title={anime.title}
-              description={anime.description}
-              episodes={anime.episodes}
-              genre={anime.genre}
-              imageUrl={anime.image_url}
-              url={anime.url}
-
-              />}
+              <img onClick={() => history.push(`/animeInfo/${anime.id}`)} key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+              <div className="buttonHome"><button>Button</button></div>
             </>
+
            ))}
 
         </div>

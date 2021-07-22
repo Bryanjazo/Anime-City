@@ -48,14 +48,45 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const history = useHistory();
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const handleSignUp = (e) => {
     e.preventDefault()
-    console.log('fetch')
+   // Send request to users to API
+   console.log('signed up')
+   fetch('http://localhost:3000/users', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       Accept: 'application/json',
+     },
+     body: JSON.stringify({
+       user:{
+       user_name: username,
+       email: email,
+       password: password
+     }
+      })
+   })
+   .then(resp => resp.json())
+   .then(function(data){
+     console.log(data)
+     debugger
+     if(data.id !== ''){
+       // console.log(data.jwt, "tokennnn")
+        localStorage.setItem("user", data.user.id)
+        // localStorage.setItem("token", data.jwt)
+        // userDetailsDataSignUp(data.user)
+        // settingUserSignUp()
+        history.push('/')
+     }
+   })
   }
-  console.log(username)
+
+
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -86,8 +117,10 @@ export default function SignUp() {
             required
             fullWidth
             id="email"
+            value={email}
             label="Email Address"
             name="email"
+            onChange={(e) => setEmail(e.target.value)}
             autoComplete="email"
             autoFocus
           />
@@ -97,9 +130,11 @@ export default function SignUp() {
             required
             fullWidth
             name="password"
+            value={password}
             label="Password"
             type="password"
             id="password"
+            onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
           <FormControlLabel
@@ -113,7 +148,7 @@ export default function SignUp() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Sign UP
           </Button>
           <Grid container>
             <Grid item xs>

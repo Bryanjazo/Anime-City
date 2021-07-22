@@ -7,6 +7,7 @@
 .row_posters::-webkit-scrollbar{
   display: none;
 }
+
 .row_poster{
   width: 100%;
   max-height: 300px;
