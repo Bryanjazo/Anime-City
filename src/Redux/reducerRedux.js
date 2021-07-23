@@ -13,10 +13,13 @@ const animeStore = createSlice({
     },
     setAnimeDetail: (state, action) =>{
       state.anime.push(action.payload)
+    },
+    clearAnimeHome: (state,action) => {
+      state.anime = []
     }
   }
 })
 
-export const {setModalStatus} = animeStore.actions
+export const {setModalStatus, setAnimeDetail, clearAnimeHome} = animeStore.actions
 
 export default animeStore.reducer

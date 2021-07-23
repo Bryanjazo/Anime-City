@@ -1,4 +1,4 @@
-.modalBackground{
+/* .modalBackground{
   width: 100vw;
   height: 100vh;
 
@@ -6,43 +6,47 @@
   justify-content: center;
   align-items: center;
 }
-/*
+
 .imageTi{
   align-items: center;
+} */
+
+.imageUrl{
+  -webkit-box-align: stretch;
+  -webkit-box-direction: normal;
+  -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    align-items: stretch;
+    border: 0px solid black;
+    box-sizing: border-box;
+    display: flex;
+    height: 700px;
+    width: 800px;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-shrink: 0;
+    margin: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 0;
 }
-.modalContainer{
-  width: 800px;
-  height: 800px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+.section{
   display: flex;
-  flex-direction: column;
-  padding: 25px;
 }
+.title{
+  white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+}
+.modalContainer .body{
 
-.modalContainer .Title{
-  display: inline-block;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.modalContainer .Image{
-  display: inline-block;
-  text-align: center;
-  margin-top: 20px;
-}
-.topCloseButton{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.modalContainer .Synopsis{
-  flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: center;
 }
 .modalContainer .Episodes{
@@ -50,4 +54,4 @@
   font-size: 1.5rem;
   justify-content: flex-end;
   color: #6d76f7;
-} */
+}
