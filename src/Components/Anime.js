@@ -32,22 +32,34 @@ function Anime({animes}){
         <h2>Action</h2>
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Action").map(anime => (
-            <img className='row_poster' key={anime.id} src={anime.image_url} alt={anime.title} /> ))}
+              <>
+                <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+              </>
+             ))}
         </div>
         <h2>Demons</h2>
         <div className="row_posters">
-        {animes.filter(animeFilter => animeFilter.genre === "Demons").map(anime => (
-            <img className='row_poster' key={anime.id} src={anime.image_url} alt={anime.title} /> ))}
+          {animes.filter(animeFilter => animeFilter.genre === "Demons").map(anime => (
+                <>
+                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                </>
+               ))}
         </div>
         <h2>Comedy</h2>
         <div className="row_posters">
-        {animes.filter(animeFilter => animeFilter.genre === "Comedy").map(anime => (
-            <img className='row_poster' key={anime.id} src={anime.image_url} alt={anime.title} /> ))}
+          {animes.filter(animeFilter => animeFilter.genre === "Comedy").map(anime => (
+                <>
+                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                </>
+               ))}
         </div>
         <h2>Dementia</h2>
         <div className="row_posters">
-        {animes.filter(animeFilter => animeFilter.genre === "Dementia").map(anime => (
-            <img className='row_poster' key={anime.id} src={anime.image_url} alt={anime.title} /> ))}
+          {animes.filter(animeFilter => animeFilter.genre === "Dementia").map(anime => (
+                <>
+                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                </>
+               ))}
         </div>
       </div>
     )

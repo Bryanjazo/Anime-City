@@ -44,9 +44,9 @@ function NavBar(){
           <Link className="nav-links" onClick={clearAnime}  to="/About">
             About
         </Link>
-          <Link className="nav-links" onClick={clearAnime}  to="/Profile">
-            Profile
-        </Link>
+          {user !== null ? <Link className="nav-links" onClick={clearAnime}  to="/Profile">Profile</Link> : ''}
+
+
           <Link className="nav-links" onClick={clearAnime}  to="/Premium">
             Premium
           </Link>
