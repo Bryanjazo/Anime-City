@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {MenuItems} from './MenuItems.js'
-import {Link, useHistory} from 'react-router-dom'
+
+import {Link} from 'react-router-dom'
 import {Button} from '../Components/Button.js'
 import {useSelector, useDispatch} from 'react-redux'
 import {clearAnimeHome, setUser} from '../Redux/reducerRedux.js'
@@ -54,7 +54,6 @@ function NavBar(){
     </ul>
     <Link to={!user && '/Login' }>
     {user !== null ? <Button onClick={handleLogOut}>Sign Out</Button> : <Button>Login</Button>}
-
     </Link>
   </nav>
   )
