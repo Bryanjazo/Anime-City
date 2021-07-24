@@ -3,6 +3,7 @@ import './Modal.css'
 import Modal from '@material-ui/core/Modal';
 import {useSelector, useDispatch} from 'react-redux'
 import {setModalStatus} from '../Redux/reducerRedux.js'
+import MiniSignUp from '../Oauth/MiniSignUp.js'
 
 
 function ModalHome(){
@@ -17,14 +18,19 @@ function ModalHome(){
       </div>
       {anime.map(show =>
         <div className="modalContainer">
-        <div className="title">
-        <h1>{show.title}</h1>
-        </div>
+
         <div className="section">
+
         <div className="imageUrl">
-          <img src={show.image_url} alt={show.title}/>
+          <div className="title">
+          <h1>{show.title}</h1>
           </div>
-          <img src={show.image_url} alt={show.title}/>
+          <img style={{width: '800px', height: '800px'}} src={show.image_url} alt={show.title}/>
+
+          </div>
+          <div className="miniSignUp">
+          <MiniSignUp />
+          </div>
         </div>
 
         <div className="body">
@@ -38,7 +44,9 @@ function ModalHome(){
         </div>
         <div className="footer">
           <button>Add to favorites</button>
+          <a href={show.url}>
           <button>Watch {show.title}</button>
+          </a>
         </div>
 
         </div>

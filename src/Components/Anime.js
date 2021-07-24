@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Anime.css'
 import {Link, useHistory} from 'react-router-dom'
 import {setAnimeDetail} from '../Redux/reducerRedux.js'
+
 import {useSelector, useDispatch} from 'react-redux'
 
 function Anime({animes}){
