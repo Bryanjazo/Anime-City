@@ -1,16 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Modal.css'
 import Modal from '@material-ui/core/Modal';
 import {useSelector, useDispatch} from 'react-redux'
 import {setModalStatus} from '../Redux/reducerRedux.js'
 import MiniSignUp from '../Oauth/MiniSignUp.js'
+import {getAnimeDetails} from '../Redux/reducerRedux.js'
 
 
 function ModalHome(){
 
   const {anime} = useSelector((state) => state.anime)
-  console.log(anime)
-  const dispatch = useDispatch()
+
+
     return (
       <>
       <div className="banner">

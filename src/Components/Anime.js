@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Anime.css'
 import {Link, useHistory} from 'react-router-dom'
-import {setAnimeDetail} from '../Redux/reducerRedux.js'
+import {getAnimeDetails} from '../Redux/reducerRedux.js'
 
 import {useSelector, useDispatch} from 'react-redux'
 
@@ -13,11 +13,11 @@ function Anime({animes}){
   const dispatch = useDispatch()
   const handleClick = (anime) => {
     console.log(anime)
-    dispatch(setAnimeDetail(anime))
+    dispatch(getAnimeDetails(anime.id))
     history.push(`/animeInfo/${anime.id}`)
   }
 
-  console.log(animeDet)
+
     return (
       <div className="row">
         <h2>Mystery</h2>

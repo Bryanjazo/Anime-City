@@ -6,6 +6,7 @@ import Login from './Oauth/SignIn.js'
 import SignUp from './Oauth/SignUp.js'
 import Anime from './Components/Anime.js'
 import ModalHome from './Components/Modal.js'
+import Profile from './Oauth/Profile.js'
 import './App.css'
 
 
@@ -19,6 +20,9 @@ function App() {
     <Switch>
       <Route path="/Login">
         <Login />
+      </Route>
+      <Route path="/Profile">
+        <Profile />
       </Route>
       <Route path="/animeInfo/:id">
         <ModalHome />

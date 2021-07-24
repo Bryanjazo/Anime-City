@@ -3,9 +3,11 @@ import {MenuItems} from './MenuItems.js'
 import {Link, useHistory} from 'react-router-dom'
 import {Button} from '../Components/Button.js'
 import {useSelector, useDispatch} from 'react-redux'
-import {clearAnimeHome} from '../Redux/reducerRedux.js'
+import {clearAnimeHome, setUser} from '../Redux/reducerRedux.js'
 import './Navbar.css'
 function NavBar(){
+
+  const {user} = useSelector((state) => state.anime)
   const [clicked, setClicked] = useState(false)
   const dispatch = useDispatch()
   const handleClick = (e) =>{
@@ -16,6 +18,10 @@ function NavBar(){
   const clearAnime = () => {
     dispatch(clearAnimeHome())
   }
+
+  const handleLogOut = () => {
+   dispatch(setUser(null))
+  }
   return(
   <nav className="NavbarItems">
     <Link className="cla" to="/">
@@ -25,18 +31,29 @@ function NavBar(){
         <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
       </div>
     <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
-    {MenuItems.map((item, index) => {
-      return(
-        <li key={index}>
-          <a onClick={clearAnime} className={item.cName} href={item.url}>
-            {item.title}
-          </a>
+
+
+        <li >
+        <Link className="nav-links" onClick={clearAnime}  to="/Home">
+            Home
+        </Link>
+          <Link className="nav-links" onClick={clearAnime}  to="/Shows">
+            Shows
+
+        </Link>
+          <Link className="nav-links" onClick={clearAnime}  to="/About">
+            About
+        </Link>
+          <Link className="nav-links" onClick={clearAnime}  to="/Profile">
+            Profile
+        </Link>
+          <Link className="nav-links" onClick={clearAnime}  to="/Premium">
+            Premium
+          </Link>
         </li>
-    )
-    })}
     </ul>
-    <Link to="/Login">
-    <Button>Login</Button>
+    <Link to={!user && '/Login' }>
+    {user !== null ? <Button onClick={handleLogOut}>Sign Out</Button> : <Button>Login</Button>}
     </Link>
   </nav>
   )

@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import {setUser} from '../Redux/reducerRedux.js'
+import {useSelector, useDispatch} from 'react-redux'
 
 function Copyright() {
   return (
@@ -48,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const dispatch = useDispatch()
   const history = useHistory();
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -73,10 +76,10 @@ export default function SignUp() {
    .then(resp => resp.json())
    .then(function(data){
      console.log(data)
-     debugger
      if(data.id !== ''){
        // console.log(data.jwt, "tokennnn")
         localStorage.setItem("user", data.user.id)
+        dispatch(setUser(localStorage.user))
         // localStorage.setItem("token", data.jwt)
         // userDetailsDataSignUp(data.user)
         // settingUserSignUp()
@@ -148,7 +151,7 @@ export default function SignUp() {
             color="primary"
             className={classes.submit}
           >
-            Sign UP
+            Sign p
           </Button>
           <Grid container>
             <Grid item xs>
