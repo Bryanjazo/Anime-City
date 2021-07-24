@@ -7,7 +7,14 @@
 .row_posters::-webkit-scrollbar{
   display: none;
 }
+.row h2{
+  font-size: 35px;
+  margin-left: 20px;
+}
+.row {
 
+  margin-left: 20px;
+}
 .row_poster{
   width: 100%;
   max-height: 300px;

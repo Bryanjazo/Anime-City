@@ -54,6 +54,7 @@ function NavBar(){
     </ul>
     <Link to={!user && '/Login' }>
     {user !== null ? <Button onClick={handleLogOut}>Sign Out</Button> : <Button>Login</Button>}
+
     </Link>
   </nav>
   )

@@ -151,7 +151,7 @@ export default function SignUp() {
             color="primary"
             className={classes.submit}
           >
-            Sign p
+            Sign Up
           </Button>
           <Grid container>
             <Grid item xs>
