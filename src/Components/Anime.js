@@ -1,15 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Anime.css'
-import {Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {getAnimeDetails} from '../Redux/reducerRedux.js'
 
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 
 function Anime({animes}){
 
-  const {modal} = useSelector((state) => state.anime)
   const history = useHistory()
-  const [animeDet, setAnimeDet] = useState([])
+
   const dispatch = useDispatch()
   const handleClick = (anime) => {
     console.log(anime)

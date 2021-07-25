@@ -4,11 +4,10 @@ import {useSelector} from 'react-redux'
 
 import Anime from './Anime.js'
 
-import {setModalStatus} from '../Redux/reducerRedux.js'
 
 
 function Home(){
-  const {modal} = useSelector((state) => state.anime)
+
   const [animes, setAnimes] = useState([])
   useEffect(() =>{
     fetch("http://localhost:3000/animes")
