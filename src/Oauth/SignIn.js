@@ -60,7 +60,7 @@ export default function SignIn() {
     e.preventDefault()
    // Send request to users to API
    console.log('signed up')
-   fetch('http://localhost:3000/users', {
+   fetch('http://localhost:3000/sessions', {
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
