@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavBar from './Navbar/Navbar.js'
 import Login from './Oauth/SignIn.js'
 import SignUp from './Oauth/SignUp.js'
-
 import ModalHome from './Components/Modal.js'
 import Profile from './Oauth/Profile.js'
 import './App.css'

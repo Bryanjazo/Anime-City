@@ -9,7 +9,7 @@ export const getAnimeDetails = createAsyncThunk(
   }
 )
 export const getUserDetails = createAsyncThunk(
-  'anime/setUserDetails',
+  'anime/getUserDetails',
   async(id) => {
     const response = await fetch(`http://localhost:3000/users/${id}`)
       const data = await response.json()

@@ -82,7 +82,7 @@ export default function SignIn() {
         localStorage.setItem("user", data.user.id)
         dispatch(setUser(localStorage.user))
         // localStorage.setItem("token", data.jwt)
-        // userDetailsDataSignUp(data.user)
+  
         // settingUserSignUp()
         history.push('/')
      }
