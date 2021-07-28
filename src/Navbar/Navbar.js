@@ -20,6 +20,7 @@ function NavBar(){
   }
 
   const handleLogOut = () => {
+  localStorage.user = ""
    dispatch(setUser(null))
   }
   return(

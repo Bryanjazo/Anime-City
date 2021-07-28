@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {getUserDetails} from '../Redux/reducerRedux.js'
+import {getUserDetails, setUserDetails} from '../Redux/reducerRedux.js'
 import './Profile.css'
 
 function Profile(){
@@ -15,7 +15,9 @@ function Profile(){
     if(localStorage.user !== ''){
      dispatch(getUserDetails(localStorage.user))
    }
-  },[currentUser,dispatch])
+ },[currentUser,dispatch])
+
+
 
   const handleUpdate = (e) =>{
     e.preventDefault()
@@ -34,6 +36,7 @@ function Profile(){
       .then(function(data){
         // window.location.reload()
         console.log(data)
+        dispatch(setUserDetails(data))
         setFormSwitch(!formSwitch)
       })
   }

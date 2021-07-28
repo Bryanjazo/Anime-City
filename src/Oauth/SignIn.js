@@ -67,27 +67,26 @@ export default function SignIn() {
        Accept: 'application/json',
      },
      body: JSON.stringify({
-       user:{
-       user_name: username,
-       email: email,
-       password: password
-     }
+        email: email,
+         user_name: username,
+         password: password
       })
    })
    .then(resp => resp.json())
    .then(function(data){
-     console.log(data)
+     console.log(data.id)
      if(data.id !== ''){
        // console.log(data.jwt, "tokennnn")
-        localStorage.setItem("user", data.user.id)
+        localStorage.setItem("user", data.id)
         dispatch(setUser(localStorage.user))
         // localStorage.setItem("token", data.jwt)
-  
+
         // settingUserSignUp()
         history.push('/')
      }
    })
   }
+  console.log(username)
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -110,19 +109,6 @@ export default function SignIn() {
             name="username"
             autoComplete="username"
             onChange={(e) => setUsername(e.target.value)}
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            value={email}
-            label="Email Address"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            autoComplete="email"
             autoFocus
           />
           <TextField

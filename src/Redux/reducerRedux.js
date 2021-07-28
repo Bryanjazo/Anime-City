@@ -53,6 +53,6 @@ const animeStore = createSlice({
 
 })
 
-export const {setModalStatus, setAnimeDetail, clearAnimeHome, setUser} = animeStore.actions
+export const {setModalStatus, setAnimeDetail, clearAnimeHome, setUser,setUserDetails} = animeStore.actions
 
 export default animeStore.reducer
