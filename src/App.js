@@ -6,6 +6,7 @@ import Login from './Oauth/SignIn.js'
 import SignUp from './Oauth/SignUp.js'
 import ModalHome from './Components/Modal.js'
 import Profile from './Oauth/Profile.js'
+import Favorites from './Favorites/favorites.js'
 import './App.css'
 
 
@@ -22,6 +23,9 @@ function App() {
       </Route>
       <Route path="/Profile">
         <Profile />
+      </Route>
+      <Route path="/Favorites">
+        <Favorites />
       </Route>
       <Route path="/animeInfo/:id">
         <ModalHome />

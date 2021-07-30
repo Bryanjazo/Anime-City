@@ -42,8 +42,8 @@ function NavBar(){
             Shows
 
         </Link>
-          <Link className="nav-links" onClick={clearAnime}  to="/About">
-            About
+          <Link className="nav-links" onClick={clearAnime}  to="/Favorites">
+            Favorites
         </Link>
           {user !== null ? <Link className="nav-links" onClick={clearAnime}  to="/Profile">Profile</Link> : ''}
 
