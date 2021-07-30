@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Modal.css'
 
 import {useSelector} from 'react-redux'
@@ -10,16 +10,14 @@ import MiniSignUp from '../Oauth/MiniSignUp.js'
 function ModalHome(){
 
   const {anime} = useSelector((state) => state.anime)
-  const [genre, setGenre] = useState()
+
   const history = useHistory()
-  const [animeId, setAnimeId] = useState()
+
 
 
   const handleFavorites = (show, e) =>{
     e.preventDefault()
-    console.log(show)
-    setGenre(show.genre)
-    setAnimeId(show.id)
+
     fetch('http://localhost:3000/favorites', {
       method: 'POST',
       headers: {
@@ -27,8 +25,9 @@ function ModalHome(){
         Accept: 'application/json',
       },
       body: JSON.stringify({
-          genre: genre,
-          anime_id: animeId
+          genre: show.genre,
+          anime_id: show.id,
+          user_id: localStorage.user
        })
     })
     .then(resp => resp.json())
