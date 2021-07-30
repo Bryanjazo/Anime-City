@@ -53,9 +53,9 @@ export default function SignIn() {
   const dispatch = useDispatch()
   const history = useHistory();
   const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
+  const [password, setPassword] = useState('')
+  
   const handleSignIn = (e) => {
     e.preventDefault()
    // Send request to users to API
@@ -67,7 +67,6 @@ export default function SignIn() {
        Accept: 'application/json',
      },
      body: JSON.stringify({
-        email: email,
          user_name: username,
          password: password
       })

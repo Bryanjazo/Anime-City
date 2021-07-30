@@ -16,7 +16,7 @@ function Profile(){
      dispatch(getUserDetails(localStorage.user))
    }
  },[currentUser,dispatch])
-
+console.log(userDetails)
 
 
   const handleUpdate = (e) =>{

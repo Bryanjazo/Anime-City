@@ -11,7 +11,9 @@ function ModalHome(){
 
   const {anime} = useSelector((state) => state.anime)
 
-
+  const handleFavorites = (e) =>{
+    e.preventDefault()
+  }
     return (
       <>
       <div className="banner">
@@ -44,7 +46,7 @@ function ModalHome(){
           <p>{show.episodes}</p>
         </div>
         <div className="footer">
-          <button>Add to favorites</button>
+          <button onClick={handleFavorites}>Add to favorites</button>
           <a href={show.url}>
           <button>Watch {show.title}</button>
           </a>
