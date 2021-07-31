@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
-
+import FavList from './FavList.js'
+import './favorites.css'
 
 function Favorites(){
   const [favorites, setFavorites] = useState([])
@@ -13,11 +14,18 @@ function Favorites(){
     })
   },[])
 
-  const obj = favorites.map(show => Object.keys(show.anime).filter(key => show.anime[key].id))
-  console.log(favorites)
-    return (
-      <div>
+  const favList = favorites.map(show =>
+    <div className="home__row">
+        <FavList show={show}/>
+    </div>
 
+  )
+
+    return (
+      <div className="home">
+        <div className="home__container">
+          {favList}
+        </div>
 
       </div>
     )
