@@ -1,7 +1,4 @@
-.home__container{
-  margin: 0;
-  padding: 0;
-}
+
 .fav_info{
   overflow-y: hidden;
   padding: 20px;
@@ -13,10 +10,14 @@
   max-height: 300px;
   display: inline-block;
 }
+.home__row > h1{
+  font-size: 35px;
+  margin-left: 20px;
+}
 .imageFav{
 
 
-  width: 300px;
+  width: 310px;
   max-height: 400px;
   margin-right: 10px;
   transition: transform 450ms;

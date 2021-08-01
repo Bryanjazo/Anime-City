@@ -55,7 +55,7 @@ export default function SignIn() {
   const [username, setUsername] = useState('')
 
   const [password, setPassword] = useState('')
-  
+
   const handleSignIn = (e) => {
     e.preventDefault()
    // Send request to users to API
@@ -74,7 +74,8 @@ export default function SignIn() {
    .then(resp => resp.json())
    .then(function(data){
      console.log(data.id)
-     if(data.id !== ''){
+
+     if(data.id){
        // console.log(data.jwt, "tokennnn")
         localStorage.setItem("user", data.id)
         dispatch(setUser(localStorage.user))

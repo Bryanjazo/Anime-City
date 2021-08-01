@@ -20,8 +20,7 @@ function NavBar(){
   }
 
   const handleLogOut = () => {
-  localStorage.user = ""
-   dispatch(setUser(null))
+   dispatch(setUser(''))
   }
   return(
   <nav className="NavbarItems">
@@ -54,7 +53,7 @@ function NavBar(){
         </li>
     </ul>
     <Link to={!user && '/Login' }>
-    {user !== null ? <Button onClick={handleLogOut}>Sign Out</Button> : <Button>Login</Button>}
+    {user === '' ?  <Button>Login</Button> : <Button onClick={handleLogOut}>Sign Out</Button> }
     </Link>
   </nav>
   )

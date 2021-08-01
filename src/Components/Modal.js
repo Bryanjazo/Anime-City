@@ -34,7 +34,7 @@ function ModalHome(){
     .then(function(data){
 
 
-         history.push('/')
+         history.push('/Favorites')
 
     })
   }
