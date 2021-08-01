@@ -27,18 +27,9 @@ function Favorites(){
 
   )
 
-if(favList !== {}){
-    return (
-      <div className="home">
-        <div className="home__container">
-          <h1 className="favH1">Favorites:</h1>
-          {favList}
-        </div>
 
-      </div>
-    )
-  }else{
-    return(
+if(favorites.length === 0){
+    return (
       <div className="prime">
         <div className="WelcomeHeader">
           <h1>Looks Like You Have No Favorites</h1><br></br>
@@ -51,6 +42,17 @@ if(favList !== {}){
             <button onClick={handleRoute}>Update Profile</button>
           </div>
         </div>
+      </div>
+
+    )
+  }else{
+    return(
+      <div className="home">
+        <div className="home__container">
+          <h1 className="favH1">Favorites:</h1>
+          {favList}
+        </div>
+
       </div>
   )
   }
