@@ -11,6 +11,23 @@
   align-items: center;
 } */
 
+.errorMsg{
+
+color: white;
+border-radius: 10px;
+top: 50px;
+right: 10px;
+padding: 20px;
+text-align: center;
+
+}
+.alert-error{
+  background: lightcoral;
+}
+.errorMsg > p{
+  margin: 0;
+}
+
 .imageUrl{
   direction: rtl;
   text-align: center;
@@ -50,4 +67,12 @@
   font-size: 1.5rem;
   justify-content: flex-end;
   color: #6d76f7;
+}
+.image-Dialog{
+  height: 500px;
+  width: 400px;
+  margin-left: 18%;
+}
+.rightBtn{
+  margin-right: 30px;
 }

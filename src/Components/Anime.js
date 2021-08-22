@@ -2,7 +2,7 @@ import React from 'react'
 import './Anime.css'
 import {useHistory} from 'react-router-dom'
 import {getAnimeDetails} from '../Redux/reducerRedux.js'
-
+import ModalTwo from './ModalTwo.js'
 import {useDispatch} from 'react-redux'
 
 function Anime({animes}){
@@ -23,7 +23,7 @@ function Anime({animes}){
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Mystery").map(anime => (
             <>
-              <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+              <ModalTwo animes={anime} />
             </>
            ))}
         </div>

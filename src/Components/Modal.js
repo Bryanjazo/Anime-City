@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Modal.css'
 
 import {useSelector} from 'react-redux'
@@ -12,6 +12,7 @@ function ModalHome(){
   const {anime} = useSelector((state) => state.anime)
 
   const history = useHistory()
+  const [error, setError] = useState({})
 
 
 
@@ -31,17 +32,25 @@ function ModalHome(){
        })
     })
     .then(resp => resp.json())
+
     .then(function(data){
-
-
-         history.push('/Favorites')
-
+      if(data.id){
+       history.push('/Favorites')
+     }else{
+       console.log(data)
+     }
+     setError(data)
     })
+
   }
+
+  console.log(error)
     return (
       <>
       <div className="banner">
-
+        <div className="errorMsg alert-error">
+          <p className="errormessage">{error.message}</p>
+        </div>
       </div>
       {anime.map(show =>
         <div className="modalContainer">
