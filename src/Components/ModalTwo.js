@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import { Select } from '@material-ui/core';
 import './Modal.css'
-
+import './Home.css'
 
 const styles = (theme) => ({
   root: {
@@ -126,7 +126,9 @@ const  ModalTwo = (props) =>{
     return (
 
       <div>
+      <div className="row_poster">
         <img  onClick={handleClickOpen} key={props.animes.id}  src={props.animes.image_url}  />
+        </div>
 
        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
          <DialogTitle id="customized-dialog-title" onClose={handleClose}>
@@ -138,11 +140,17 @@ const  ModalTwo = (props) =>{
          <DialogContent dividers>
 
            <Typography gutterBottom>
-             Description: <br></br> {props.animes.description}
+
+             <p>
+             <b>Description:
+             </b>
+             <br></br> {props.animes.description}
+            </p>
              <br></br>
-             Genre: {props.animes.genre}
+             <p><b>Genre:</b> {props.animes.genre}</p>
              <br></br>
-             Episodes: {props.animes.episodes}
+             <p><b>Episodes:</b> {props.animes.episodes}</p>
+
            </Typography>
 
 
