@@ -8,8 +8,8 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
+
 import DialogContentText from '@material-ui/core/DialogContentText';
 import { Select } from '@material-ui/core';
 import './Modal.css'
@@ -59,7 +59,7 @@ const  ModalTwo = (props) =>{
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
 
-    console.log(props)
+
 
     const styles = (theme) => ({
         root: {
@@ -119,7 +119,8 @@ const  ModalTwo = (props) =>{
 
     };
 
-    const handleFavorites = () =>{
+    const handleFavorites = (e) =>{
+      e.preventDefault()
 
     }
 

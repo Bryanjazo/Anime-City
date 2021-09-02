@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
+
 export const getAnimeDetails = createAsyncThunk(
   'anime/setAnimeDetail',
   async(id) => {
@@ -16,11 +17,22 @@ export const getUserDetails = createAsyncThunk(
       return data
   }
 )
+
+export const getAnimes = createAsyncThunk(
+  'anime/getAnimes',
+  async() => {
+    
+    const response = await fetch(`http://localhost:3000/animes`)
+      const data = await response.json()
+
+      return data
+  }
+)
 const animeStore = createSlice({
   name: "anime",
   initialState:{
     modal: false,
-    anime: [],
+    anime: {},
     user: localStorage.user,
     userDetails: {}
   },
@@ -45,8 +57,8 @@ const animeStore = createSlice({
     builder.addCase(getAnimeDetails.fulfilled, (state, action) =>{
       state.anime.push(action.payload)
     })
-    builder.addCase(getUserDetails.fulfilled, (state, action) =>{
-      state.userDetails = action.payload
+    builder.addCase(getAnimes.fulfilled, (state, action) =>{
+      state.anime = action.payload 
     })
   },
 

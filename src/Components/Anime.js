@@ -6,7 +6,7 @@ import ModalTwo from './ModalTwo.js'
 import {useDispatch} from 'react-redux'
 
 function Anime({animes}){
-
+  console.log(animes)
   const history = useHistory()
 
   const dispatch = useDispatch()
