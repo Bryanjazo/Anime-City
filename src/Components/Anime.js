@@ -32,7 +32,7 @@ function Anime({animes}){
         <div className="row_posters">
         {animes.filter(animeFilter => animeFilter.genre === "Action").map(anime => (
               <>
-                <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                <ModalTwo animes={anime} />
               </>
              ))}
         </div>
@@ -40,7 +40,7 @@ function Anime({animes}){
         <div className="row_posters">
           {animes.filter(animeFilter => animeFilter.genre === "Demons").map(anime => (
                 <>
-                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                 <ModalTwo animes={anime} />
                 </>
                ))}
         </div>
@@ -48,7 +48,7 @@ function Anime({animes}){
         <div className="row_posters">
           {animes.filter(animeFilter => animeFilter.genre === "Comedy").map(anime => (
                 <>
-                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                 <ModalTwo animes={anime} />
                 </>
                ))}
         </div>
@@ -56,7 +56,7 @@ function Anime({animes}){
         <div className="row_posters">
           {animes.filter(animeFilter => animeFilter.genre === "Dementia").map(anime => (
                 <>
-                  <img  value={anime.id} onClick={() => handleClick(anime)}key={anime.id} className='row_poster' src={anime.image_url} alt={anime.title} />
+                  <ModalTwo animes={anime} />
                 </>
                ))}
         </div>
